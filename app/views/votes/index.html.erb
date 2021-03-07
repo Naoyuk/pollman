@@ -1,2 +1,9 @@
-<h1>Votes#index</h1>
-<p>Find me in app/views/votes/index.html.erb</p>
+<% provide(:title, 'Votes') %>
+<h1>Votes</h1>
+<div class="container">
+    <ul>
+        <% @votes.each do |v| %>
+        <li><%= link_to v.title, v %><br><%= v.deadline %></li>
+        <% end %>
+    </ul>
+</div>

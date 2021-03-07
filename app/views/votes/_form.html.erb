@@ -1,0 +1,29 @@
+<%= form_with(model: @vote, local: true) do |form| %>
+    <div class="form-group">
+    <% if @vote.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(@vote.errors.count, "error") %>Failure to save:</h2>
+
+            <ul>
+            <% @vote.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+        <div class="field">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: "form-control" %>
+        </div>
+
+        <div class="field">
+            <%= form.label :deadline %>
+            <%= form.datetime_field :deadline, class: "form-control" %>
+        </div>
+
+        <div class="actions">
+            <%= form.submit class: "btn btn-primary" %>
+        </div>
+    </div>
+<% end %>
+<%= link_to "Back", votes_path %>

@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class VotesController < ApplicationController
-  before_action :set_vote, only: %i(show edit update destroy)
+  before_action :set_vote, only: %i[show edit update destroy]
 
   def index
     @votes = Vote.all
-    #TODO ユーザーモデルを作成したら、そのユーザーが参加する、またはそのユーザーの作成したVoteのみを降順に取得
+    # TODO: ユーザーモデルを作成したら、そのユーザーが参加する、またはそのユーザーの作成したVoteのみを降順に取得
   end
 
   def new
-    @vote = Vote.new()
+    @vote = Vote.new
   end
 
   def create

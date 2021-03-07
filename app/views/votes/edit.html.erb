@@ -1,2 +1,7 @@
-<h1>Votes#edit</h1>
-<p>Find me in app/views/votes/edit.html.erb</p>
+<h1>Poll#: <%= @vote.id %> | <%= @vote.title %></h1>
+<div class='row'>
+    <%= render 'form' %>
+</div>
+<div class="row">
+    <%= link_to 'back', vote_path(@vote), class: 'btn btn-light' %>
+</div>
