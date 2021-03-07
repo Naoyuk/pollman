@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe "StaticPages", type: :system do
+RSpec.describe 'StaticPages', type: :system do
   before do
     driven_by(:rack_test)
   end
@@ -17,9 +17,9 @@ RSpec.describe "StaticPages", type: :system do
   end
 
   scenario 'help page has own title and contents' do
-    visit root_path
-    expect(page).to have_current_path root_path
-    expect(page).to have_title 'Pollman | Help'
+    visit help_path
+    expect(page).to have_current_path help_path
+    expect(page).to have_title 'Help|Pollman'
     expect(page).to have_content 'What\'s Pollman'
     expect(page).to have_content 'Home'
     expect(page).to have_content 'Log in'
